@@ -159,11 +159,42 @@ Registro1.registrarUsuario();
             }
         } while (opcion != 5);
 
-        entrada.close();
 
+
+
+        entrada.close();
+contadorCaracteres("holaMundo123");
 
 
     }
+
+    public static void contadorCaracteres(String caracteres){
+        int contadorVocales = 0;
+        int contadorCaracteresEspeciales = 0;
+        int contadorNumeros = 0;
+        String vocales = "aeiouAEIOU";
+        String caracteresEspeciales = "@#$%&_-+=[]{};:,.<>/?*~^|";
+        String numbers = "0123456789";
+
+        for (Character letra : caracteres.toCharArray()){
+
+     if (vocales.contains(String.valueOf(letra))){
+         contadorVocales ++;
+     }
+            if (caracteresEspeciales.contains(String.valueOf(letra))){
+                contadorCaracteresEspeciales ++;
+            }
+            if (numbers.contains(String.valueOf(letra))){
+                contadorNumeros ++;
+            }
+
+
+        }
+
+System.out.println("La cantidad de vocales es: " + contadorVocales + " la cantidad de numeros es: " + contadorNumeros + " la cantidad de caracteres es: "+ contadorCaracteresEspeciales);
+
+    }
+
 
     public static int solicitarEdad(){
         int edad;
