@@ -13,6 +13,11 @@ var User1 = new Users("Pepe","Abc12@13dff","posa123@gmail.com",23);
 var Registro1 = new RegistrarUsuarios(User1);
 Registro1.registrarUsuario();
 
+        BankAccount cuenta = new BankAccount(100);
+        cuenta.deposito(600);
+        System.out.println(cuenta.getBalance());
+        cuenta.withdraw(1000);
+      System.out.println(cuenta.getBalance());
         ArrayList<Double> listaNotas = new ArrayList<>();
 
      var sistema = new SystemNotes(listaNotas);
