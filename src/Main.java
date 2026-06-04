@@ -6,18 +6,23 @@ public class Main{
     static Scanner entrada = new Scanner(System.in).useLocale(Locale.US);
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws CustomExepcion {
+
+
+var horno = new TemperatureChecker(-49);
+horno.checkTemperature();
 
 var User1 = new Users("Pepe","Abc12@13dff","posa123@gmail.com",23);
 
 var Registro1 = new RegistrarUsuarios(User1);
 Registro1.registrarUsuario();
 
-        BankAccount cuenta = new BankAccount(100);
-        cuenta.deposito(600);
+        BankAccount cuenta = new BankAccount(0);
+        cuenta.deposito(110);
         System.out.println(cuenta.getBalance());
-        cuenta.withdraw(1000);
-      System.out.println(cuenta.getBalance());
+        cuenta.withdraw(60);
+        System.out.println(cuenta.getBalance());
+
         ArrayList<Double> listaNotas = new ArrayList<>();
 
      var sistema = new SystemNotes(listaNotas);
