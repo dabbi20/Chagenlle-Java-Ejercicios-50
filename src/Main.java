@@ -9,6 +9,10 @@ public class Main{
     public static void main(String[] args) throws CustomExepcion {
 
 
+
+
+
+
 var horno = new TemperatureChecker(-49);
 horno.checkTemperature();
 
