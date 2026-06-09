@@ -50,5 +50,54 @@ public class Pruebas {
                 "Promedio del grupo: "
                         + sistema.calcularPromedioGeneralDelGrupo()
         );
+
+
+
+        UserManager userManager = new UserManager();
+
+        Register register = new Register(userManager);
+
+        Login login = new Login(userManager);
+
+        // Registro exitoso
+        register.registrar(
+                "David",
+                "david@gmail.com",
+                "Password123!",
+                "Password123!"
+        );
+
+        // Usuario repetido
+        register.registrar(
+                "David",
+                "david@gmail.com",
+                "Password123!",
+                "Password123!"
+        );
+
+        // Login correcto
+        boolean acceso1 = login.iniciarSession(
+                "david@gmail.com",
+                "Password123!"
+        );
+
+        System.out.println("Login correcto: " + acceso1);
+
+        // Contraseña incorrecta
+        boolean acceso2 = login.iniciarSession(
+                "david@gmail.com",
+                "123456"
+        );
+
+        System.out.println("Login correcto: " + acceso2);
+
+        // Usuario inexistente
+        boolean acceso3 = login.iniciarSession(
+                "juan@gmail.com",
+                "Password123!"
+        );
+
+        System.out.println("Login correcto: " + acceso3);
+
     }
 }
