@@ -51,6 +51,16 @@ public class Pruebas {
                         + sistema.calcularPromedioGeneralDelGrupo()
         );
 
+        Product mesa = new Product("Mesa",100,350.000,1);
+  SistemProduct stock = new SistemProduct();
+        stock.agregarProduct(mesa);
+        Product TV = new Product("TV",200,500.000,2);
+
+       stock.agregarProduct(TV);
+System.out.println(stock.buscarProduct(2));
+
+stock.mostrarInformacion(mesa);
+System.out.println(stock.calculateInventary(mesa));
 
 
         UserManager userManager = new UserManager();
@@ -100,4 +110,6 @@ public class Pruebas {
         System.out.println("Login correcto: " + acceso3);
 
     }
+
+
 }
