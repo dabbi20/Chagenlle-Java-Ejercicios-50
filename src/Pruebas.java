@@ -51,16 +51,23 @@ public class Pruebas {
                         + sistema.calcularPromedioGeneralDelGrupo()
         );
 
-        Product mesa = new Product("Mesa",100,350.000,1);
-  SistemProduct stock = new SistemProduct();
+        Product mesa = new Product("Mesa", 100, 350000, 1);
+        Product tv = new Product("TV", 200, 500000, 2);
+
+        SistemProduct stock = new SistemProduct();
+
         stock.agregarProduct(mesa);
-        Product TV = new Product("TV",200,500.000,2);
+        stock.agregarProduct(tv);
 
-       stock.agregarProduct(TV);
-System.out.println(stock.buscarProduct(2));
+// Crear carrito
+        CarritoCompras carrito = new CarritoCompras();
 
-stock.mostrarInformacion(mesa);
-System.out.println(stock.calculateInventary(mesa));
+// Añadir productos
+        carrito.añadirCarrito(mesa, 2);
+        carrito.añadirCarrito(tv, 1);
+
+// Mostrar factura
+        carrito.mostrarFactura();
 
 
         UserManager userManager = new UserManager();
