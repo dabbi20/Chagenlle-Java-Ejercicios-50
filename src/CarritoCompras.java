@@ -2,10 +2,13 @@ import java.util.ArrayList;
 
 public class CarritoCompras {
     //ATRIBUTOS
-    private ArrayList<ItemCarrito>carrito = new ArrayList<>();
+    private ArrayList<ItemCarrito> carrito = new ArrayList<>();
 
+    public ArrayList<ItemCarrito> getItems() {
+        return carrito;
+    }
 
-    //METODOS
+//METODOS
 
     //AÑADIR CARRITO
     public void añadirCarrito(Product product, int cantidad){
@@ -116,5 +119,6 @@ public double calcularSubtotal(){
 
         System.out.println("============================");
     }
+
 
 }
