@@ -4,6 +4,11 @@ public class ProbarAbstrac {
         Electronic ferrari = new Electronic("02","Ferrari",10,50.000,"Ferrari","z- 2026");
         Food tomahoh = new Food("03","Aqui se concina",200,30.000,"Cr4 -03 brr juan es", "Tomahok");
 
+
+        libro1.disconunt();
+        ferrari.disconunt();
+        tomahoh.disconunt();
+
         Productos[] productos = {
                 libro1,
                 ferrari,
@@ -12,6 +17,9 @@ public class ProbarAbstrac {
         for (Productos producto : productos){
             producto.products();
         }
+
+
+
     }
 
 
