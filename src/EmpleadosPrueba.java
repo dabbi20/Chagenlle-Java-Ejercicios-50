@@ -1,4 +1,6 @@
 import java.math.BigDecimal;
+import java.lang.String;
+
 
 public class EmpleadosPrueba {
     public static void main(String[] args) {
@@ -7,9 +9,9 @@ public class EmpleadosPrueba {
             Empresa miEmpresa = new Empresa();
 
 
-            Empleado emp1 = new Empleado(new BigDecimal("1000.00"));
-            Empleado emp2 = new Empleado(new BigDecimal("2500.50"));
-            Empleado emp3 = new Empleado(new BigDecimal("1800.00"));
+            Empleado emp1 = new Empleado("David",new BigDecimal("1000.00"));
+            Empleado emp2 = new Empleado("Pepe" ,new BigDecimal("2500.50"));
+            Empleado emp3 = new Empleado("Juan",new BigDecimal("1800.00"));
 
 
             miEmpresa.agregarEmpleado(emp1);
@@ -31,7 +33,7 @@ public class EmpleadosPrueba {
 
 
             System.out.println("\n--- Probando la Invariante (Salario Negativo) ---");
-            Empleado empInvalido = new Empleado(new BigDecimal("-500.00"));
+            Empleado empInvalido = new Empleado("Pacho",new BigDecimal("-500.00"));
 
         } catch (SalarioNegativoException e) {
 
