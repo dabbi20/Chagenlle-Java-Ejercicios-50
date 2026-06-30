@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Student {
+public class Student implements Reportable {
 
 
     private String nombre;
@@ -13,6 +13,22 @@ public class Student {
         this.edad = edad;
         this.notas = new ArrayList<>();
         actualizarEstado();
+    }
+
+    @Override
+    public void compilarDatos() {
+        actualizarEstado();
+        System.out.println("Compilando expediente academico de: " + nombre);
+    }
+
+    @Override
+    public void exportar(String formato) {
+        System.out.println("=== REPORTE DE ESTUDIANTE (" + formato + ") ===");
+        System.out.println("Estudiante: " + nombre + " | Edad: " + edad);
+        System.out.println("Notas actuales: " + notas);
+        System.out.println("Promedio final: " + String.format("%.2f", calcularPromedio()));
+        System.out.println("Estado académico: " + estado);
+        System.out.println("=========================================\n");
     }
 
     // GETTERS
